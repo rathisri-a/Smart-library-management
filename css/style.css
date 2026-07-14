@@ -1,0 +1,110 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'times new roman', sans-serif; 
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/background.jfif'); /* Add your image here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.neon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 1); /* Solid white background */
+    padding: 25px; /* Moderate padding */
+    width: 320px; /* Reduced width */
+    border-radius: 10px; /* Soft border radius */
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4); /* Black shadow with a large blur effect */
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+    padding: 12px 20px; /* Slightly increased button size */
+    background-color: #f0f0f0; /* Light gray background */
+    color: #000; /* Black text color */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-buttons button.active {
+    background-color: #fff; /* Active button has white background */
+    color: #000; /* Black text */
+    border-color: #000; /* Darker border for active button */
+}
+
+.toggle-buttons button:hover {
+    background-color: #ddd; /* Light gray hover effect */
+}
+
+.neon-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.neon-form input {
+    margin-bottom: 15px;
+    padding: 12px; /* Reduced padding for input */
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light gray border */
+    outline: none;
+    background-color: #fff; /* White input background */
+    color: #000; /* Black text */
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.neon-form input:focus {
+    border-color: #000; /* Darker border when focused */
+}
+
+.neon-form button {
+    padding: 12px; /* Slightly reduced button padding */
+    background-color: #000; /* Black background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff; /* White text */
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.neon-form button:hover {
+    background-color: #444; /* Darker background on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .login-box {
+        width: 85%; /* Responsive width for smaller screens */
+    }
+}

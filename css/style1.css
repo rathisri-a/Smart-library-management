@@ -1,0 +1,94 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f7f3f3;
+}
+
+.navigation {
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navigation ul {
+    display: flex;
+    width: 350px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.navigation ul li .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    transition: 0.5s;
+    color: #777;
+}
+
+.navigation ul li.active .icon {
+    transform: translateY(-20px);
+    color: #29fd53;
+}
+
+.navigation ul li .text {
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.navigation ul li.active .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.navigation ul li.active ~ .indicator {
+    transform: translateX(calc(var(--i) * 70px));
+}
+
+.navigation ul .indicator {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #29fd53;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: 0;
+    transition: 0.5s;
+}

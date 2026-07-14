@@ -1,0 +1,105 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIBRARY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 10px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 10px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            color: #ffcc00;
+            border-radius: 5px;
+        }
+
+        .logout-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-right: 15px;
+            transition: background 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #e53935;
+        }
+
+        .content {
+            padding: 80px 20px 20px; /* Adjusted for fixed navbar */
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div>
+            <a href="pages/books.php">📚 List of Books</a>
+            <a href="pages/addbooks.php">➕ Add Books</a>
+            <a href="pages/deletebooks.php">🗑️ Delete Books</a>
+            <a href="pages/issue_book.php">📤 Issue Book</a>
+            <a href="pages/admin_view_issued_books.php">📄 View Issued Books</a>
+            <a href="pages/return_book.php">📥 Return Book</a>
+            <a href="pages/view_book_requests.php">📨 View Book Requests</a> <!-- ✅ Icon added -->
+        </div>
+        <button class="logout-button" onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <div class="content">
+        <h1>SMART LIBRARY ACCESS BENCH</h1>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>

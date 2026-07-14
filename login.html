@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin & Student Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Header styling */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align the items */
+            background-color: #fefefe;
+            padding: 10px 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header img {
+            height: 60px; /* Adjust logo size */
+            margin: 0 20px; /* Add space between logos and text */
+        }
+
+        .college-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(199, 50, 13);
+            text-transform: uppercase;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .neon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            margin-top: 50px; /* Push login box down */
+        }
+
+        .hidden {
+            display: none;
+        }
+        
+        .active {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Logos and College Name -->
+    <div class="header">
+        <img src="images/logo1.png" alt="Left Logo">  <!-- Top Left Logo -->
+        <div class="college-name">Sri Ramakrishna Engineering College</div> <!-- College Name in Center -->
+        <img src="images/logo.jpeg" alt="Right Logo"> <!-- Top Right Logo -->
+    </div>
+
+    <div class="neon-container">
+        <div class="login-box">
+            <div class="toggle-buttons">
+                <button id="admin-btn" class="active" onclick="showLogin()">Admin</button>
+                <button id="student-btn" onclick="showRegister()">Student</button>
+            </div>
+
+            <!-- Admin Login Form -->
+            <form id="login-form" class="neon-form" action="pages/admin_login.php" method="POST">
+                <input type="email" name="admin_email" placeholder="Email" required>
+                <input type="password" name="admin_password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Student Login Form -->
+            <form id="register-form" class="neon-form hidden" action="pages/student_login.php" method="POST">
+                <input type="email" name="student_email" placeholder="Email" required>
+                <button type="submit">Enter</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const adminBtn = document.getElementById('admin-btn');
+        const studentBtn = document.getElementById('student-btn');
+
+        function showLogin() {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+            adminBtn.classList.add('active');
+            studentBtn.classList.remove('active');
+        }
+
+        function showRegister() {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+            studentBtn.classList.add('active');
+            adminBtn.classList.remove('active');
+        }
+
+        // Initialize by showing the admin login form
+        showLogin();
+    </script>
+
+</body>
+</html>
